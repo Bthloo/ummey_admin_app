@@ -1,6 +1,9 @@
 
 import 'package:cat/features/category_details/view/pages/category_details.dart';
+import 'package:cat/features/home_screen/view/pages/categories_screen.dart';
 import 'package:cat/features/home_screen/view/pages/home_screen.dart';
+import 'package:cat/features/home_screen/view/pages/oredrs_details_screen.dart';
+import 'package:cat/features/maker/view/pages/pizza_maker.dart';
 import 'package:cat/features/meal_screen/view/pages/meal_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -30,9 +33,12 @@ class MyApp extends StatelessWidget {
        // home: MyHomePage(),
         initialRoute: HomeScreen.routeName,
         routes: {
-          HomeScreen.routeName : (_) =>  HomeScreen(),
+          HomeScreen.routeName : (_) =>  const HomeScreen(),
+          OrderDetailsScreen.routeName : (_) =>  const OrderDetailsScreen(),
+         // CategoriesScreen.routeName : (_) =>  CategoriesScreen(),
           CategoryDetails.routeName : (_) =>  CategoryDetails(),
           MealScreen.routName : (_) =>  MealScreen(),
+          PizzaMaker.routeName : (_) =>   PizzaMaker(),
         },
       ),
     );

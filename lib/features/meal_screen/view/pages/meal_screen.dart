@@ -206,9 +206,7 @@ class MealScreen extends StatelessWidget {
                                     mealId: argument.mealModel.id!,
                                   );
                                 }
-
                               });
-
                             },
                             icon: const Icon(Icons.add_circle))
                       ],

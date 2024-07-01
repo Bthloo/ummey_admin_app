@@ -1,5 +1,7 @@
 import 'package:cat/core/data_base/models/meal_model.dart';
+import 'package:cat/core/data_base/models/sale_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'models/admin_cart_model.dart';
 import 'models/categories_model.dart';
 import 'models/drivers.dart';
 import 'models/ride_request.dart';
@@ -115,40 +117,39 @@ class MyDataBase{
   }
 
 
-  static Future<QuerySnapshot<RideRequest>> getHistory({required String? id}){
+  static Future<void> editHistory({
+    required String? uId,
+    required CartAmdinModel? cartAdminModel}){
     var collection = getUsersCollection();
-
-    var historyCollection = collection.doc(id).collection('History').withConverter<RideRequest>(
-      fromFirestore: (snapshot, options) => RideRequest.fromFireStore(snapshot.data()),
-      toFirestore: (ride, options) => ride.toFireStore(),
-    ).get();
-
-
+    var historyCollection = collection.doc(uId).collection('History')
+        .withConverter<CartAmdinModel>(
+      fromFirestore: (snapshot, options) => CartAmdinModel.fromFireStore(snapshot.data()),
+      toFirestore: (cart, options) => cart.toFireStore(),
+    ).doc(cartAdminModel?.id).set(cartAdminModel!);
     return historyCollection;
-
   }
 
-  static CollectionReference<Driver> getDriverCollection(){
-    return FirebaseFirestore.instance.collection(Driver.collectionName)
-        .withConverter<Driver>(
-      fromFirestore: (snapshot, options) => Driver.fromFireStore(snapshot.data()),
-      toFirestore: (user, options) => user.toFireStore(),
+  static CollectionReference<CartAmdinModel> getCartAdminCollection() {
+    return FirebaseFirestore.instance.collection(CartAmdinModel.collectionName)
+        .withConverter<CartAmdinModel>(
+      fromFirestore: (snapshot, options) =>
+          CartAmdinModel.fromFireStore(snapshot.data()),
+      toFirestore: (cartAmdinModel, options) => cartAmdinModel.toFireStore(),
     );
   }
-  static Future<Driver?> readDriver(String id)async{
-    var collection = getDriverCollection();
-    var docSnapshot = await collection.doc(id).get();
-    return docSnapshot.data();
+
+  static Future<QuerySnapshot<SaleModel>> getDiscountCodes(){
+    return FirebaseFirestore.instance.collection(SaleModel.collectionName)
+        .withConverter<SaleModel>(
+      fromFirestore: (snapshot, options) => SaleModel.fromJson(snapshot.data()),
+      toFirestore: (category, options) => category.toFireStore(),
+    ).get();
   }
-
-
-  static Future<void> updateDriverHistory({required RideRequest? rideRequest,required String? id}){
-    var collection = getDriverCollection();
-    return collection.doc(id).collection('History')
-        .withConverter<RideRequest>(
-      fromFirestore: (snapshot, options) => RideRequest.fromFireStore(snapshot.data()),
-      toFirestore: (ride, options) => ride.toFireStore(),
-    ).doc(rideRequest!.id).update(rideRequest.toFireStore());
+  static Future<void> addDiscountCodes(SaleModel saleModel){
+    return FirebaseFirestore.instance.collection(SaleModel.collectionName)
+        .withConverter<SaleModel>(
+      fromFirestore: (snapshot, options) => SaleModel.fromJson(snapshot.data()),
+      toFirestore: (category, options) => category.toFireStore(),
+    ).add(saleModel);
   }
-
 }
