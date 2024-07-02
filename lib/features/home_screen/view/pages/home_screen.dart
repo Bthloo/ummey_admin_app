@@ -29,7 +29,7 @@ static const String routeName = "home-screen";
                 ),
                 NavigationDestination(
                     selectedIcon: Icon(Icons.discount_outlined, color: ColorHelper.mainColor,),
-                    icon: Icon(Icons.category),
+                    icon: Icon(Icons.discount_outlined),
                     label: 'Discount'
                 ),
                 NavigationDestination(
