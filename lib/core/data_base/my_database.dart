@@ -3,8 +3,6 @@ import 'package:cat/core/data_base/models/sale_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'models/admin_cart_model.dart';
 import 'models/categories_model.dart';
-import 'models/drivers.dart';
-import 'models/ride_request.dart';
 import 'models/user.dart';
 
 class MyDataBase{
@@ -97,26 +95,6 @@ class MyDataBase{
    ;
 
   }
-
-
-  static Future<void> updateHistory({required RideRequest? rideRequest,required String? id}){
-    var collection = getUsersCollection();
-    return collection.doc(id).collection('History')
-        .withConverter<RideRequest>(
-      fromFirestore: (snapshot, options) => RideRequest.fromFireStore(snapshot.data()),
-      toFirestore: (ride, options) => ride.toFireStore(),
-    ).doc(rideRequest!.id).update(rideRequest.toFireStore());
-  }
-  static Future<void> deleteHistory({required RideRequest? rideRequest,required String? id,String? tripId}){
-    var collection = getUsersCollection();
-    return collection.doc(id).collection('History')
-        .withConverter<RideRequest>(
-      fromFirestore: (snapshot, options) => RideRequest.fromFireStore(snapshot.data()),
-      toFirestore: (ride, options) => ride.toFireStore(),
-    ).doc(rideRequest?.id).delete();
-  }
-
-
   static Future<void> editHistory({
     required String? uId,
     required CartAmdinModel? cartAdminModel}){

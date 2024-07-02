@@ -6,7 +6,7 @@ class CartAmdinModel{
   String? id;
   List<CartModel>? cartModelList;
   List<String>? pizzaMaker;
-  double? totalPrice;
+  num? totalPrice;
   String? userName;
   String? userPhone;
   String? userAddress;

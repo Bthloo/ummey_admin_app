@@ -23,7 +23,7 @@ static const String routeName = "home-screen";
               indicatorColor: ColorHelper.darkColor,
               destinations: const [
                 NavigationDestination(
-                  selectedIcon: Icon(Icons.receipt_long, color: ColorHelper.mainColor,),
+                  selectedIcon: Icon(Icons.category, color: ColorHelper.mainColor,),
                   icon: Icon(Icons.category),
                   label: 'Categories'
                 ),
@@ -33,7 +33,7 @@ static const String routeName = "home-screen";
                     label: 'Discount'
                 ),
                 NavigationDestination(
-                  selectedIcon: Icon(Icons.warehouse, color: ColorHelper.mainColor,),
+                  selectedIcon: Icon(Icons.shopping_cart_outlined, color: ColorHelper.mainColor,),
                   icon: Icon(Icons.shopping_cart_outlined),
                   label: 'Orders',
                 ),
