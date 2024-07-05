@@ -3,6 +3,7 @@ import 'package:cat/core/data_base/models/sale_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'models/admin_cart_model.dart';
 import 'models/categories_model.dart';
+import 'models/seat_model.dart';
 import 'models/user.dart';
 
 class MyDataBase{
@@ -130,4 +131,18 @@ class MyDataBase{
       toFirestore: (category, options) => category.toFireStore(),
     ).add(saleModel);
   }
+
+  static CollectionReference<SeatModel> getSeatsCollection(){
+    return FirebaseFirestore.instance.collection(SeatModel.collectionName)
+        .withConverter<SeatModel>(
+      fromFirestore: (snapshot, options) => SeatModel.fromJson(snapshot.data()),
+      toFirestore: (seats, options) => seats.toJson(),
+    );
+  }
+
+  static Future<void> editSeat(SeatModel seat){
+    var collection = getSeatsCollection();
+    return collection.doc(seat.seatName).update(seat.toJson());
+  }
+
 }

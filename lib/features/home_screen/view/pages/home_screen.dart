@@ -37,6 +37,11 @@ static const String routeName = "home-screen";
                   icon: Icon(Icons.shopping_cart_outlined),
                   label: 'Orders',
                 ),
+                NavigationDestination(
+                  selectedIcon: Icon(Icons.event_seat, color: ColorHelper.mainColor,),
+                  icon: Icon(Icons.event_seat),
+                  label: 'Seats',
+                ),
               ],
             ),
             appBar: AppBar(

@@ -13,6 +13,7 @@ class CartAmdinModel{
   String? userEmail;
   String userId;
   String? time;
+  String? seatName;
   String? status;
   bool? isCodeUsed;
   String? discountCode;
@@ -25,6 +26,7 @@ class CartAmdinModel{
     required this.userPhone,
     required this.time,
     required this.userEmail,
+    required this.seatName,
     required this.status,
     required this.userId,
     this.isCodeUsed,
@@ -43,6 +45,7 @@ class CartAmdinModel{
       'userEmail' : userEmail,
       'status' : status,
       'userId' : userId,
+      'seatName':seatName,
       'time':time,
       'isCodeUsed':isCodeUsed,
       'discountCode':discountCode,
@@ -64,7 +67,8 @@ class CartAmdinModel{
           isCodeUsed: data?['isCodeUsed'],
           discountCode: data?['discountCode'],
           time: data?['time'],
-          pizzaMaker: data?['pizzaMaker']
+          pizzaMaker: data?['pizzaMaker'],
+          seatName: data?['seatName']
       );
 
 }

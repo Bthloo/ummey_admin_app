@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../maker/view/pages/maker.dart';
 import '../../view/pages/admin_cart.dart';
+import '../../view/pages/seat_screen.dart';
 part 'app_bar_state.dart';
 class BottomAppBarCubit extends Cubit<BottomAppBarState> {
   BottomAppBarCubit() : super(BottomAppBarInitial());
@@ -13,8 +14,10 @@ class BottomAppBarCubit extends Cubit<BottomAppBarState> {
   List<Widget> tabs = [
     CategoriesScreen(),
     //Maker(),
+
      DiscountPage(),
     const AdminCart(),
+    SeatScreen(),
   ];
   void changeIndex(int index) {
     currentTapIndex = index;
