@@ -2,8 +2,6 @@ import 'package:cat/features/home_screen/view/pages/categories_screen.dart';
 import 'package:cat/features/home_screen/view/pages/discount_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../maker/view/pages/maker.dart';
 import '../../view/pages/admin_cart.dart';
 import '../../view/pages/seat_screen.dart';
 part 'app_bar_state.dart';

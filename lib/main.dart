@@ -1,6 +1,5 @@
 
 import 'package:cat/features/category_details/view/pages/category_details.dart';
-import 'package:cat/features/home_screen/view/pages/categories_screen.dart';
 import 'package:cat/features/home_screen/view/pages/home_screen.dart';
 import 'package:cat/features/home_screen/view/pages/oredrs_details_screen.dart';
 import 'package:cat/features/maker/view/pages/pizza_maker.dart';

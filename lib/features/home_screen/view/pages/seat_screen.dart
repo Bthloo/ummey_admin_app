@@ -94,8 +94,6 @@ class SeatScreen extends StatelessWidget {
                                     ),
                                     child: ListTile(
                                       onTap: (){
-
-
                                         DialogUtilities.showMessage(
                                             context,
                                             "Are you sure to unreserved this seat ",
@@ -111,9 +109,6 @@ class SeatScreen extends StatelessWidget {
                                                cubit.getSeats();
                                             },
                                             posstiveActionName: "Cancel",
-                                          posstiveAction: () {
-                                            Navigator.pop(context);
-                                          },
                                         );
                                       },
                                       title: Text("Name: ${cubit.reservedSeats[index].seatName}",style: TextStyle(

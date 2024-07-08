@@ -13,13 +13,13 @@ ThemeData themeData(BuildContext context) {
     colorScheme: ColorScheme.fromSeed(seedColor: ColorHelper.mainColor),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        shape: MaterialStatePropertyAll(
+        shape: WidgetStatePropertyAll(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
-        backgroundColor: const MaterialStatePropertyAll(ColorHelper.mainColor),
-        foregroundColor: const MaterialStatePropertyAll(Colors.white),
+        backgroundColor: const WidgetStatePropertyAll(ColorHelper.mainColor),
+        foregroundColor: const WidgetStatePropertyAll(Colors.white),
         textStyle:
-            const MaterialStatePropertyAll(TextStyle(color: Colors.white)),
-        overlayColor: MaterialStatePropertyAll(Colors.white.withOpacity(.1)),
+            const WidgetStatePropertyAll(TextStyle(color: Colors.white)),
+        overlayColor: WidgetStatePropertyAll(Colors.white.withOpacity(.1)),
       ),
     ),
   );

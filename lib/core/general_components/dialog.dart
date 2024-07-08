@@ -42,10 +42,10 @@ class DialogUtilities{
     if(nigaiveActionName != null) {
       actions.add(TextButton(
         style: const ButtonStyle(
-          foregroundColor:MaterialStatePropertyAll(
+          foregroundColor:WidgetStatePropertyAll(
             Colors.blue
         ),
-          overlayColor: MaterialStatePropertyAll(
+          overlayColor: WidgetStatePropertyAll(
             Colors.transparent
           )
         ),

@@ -51,8 +51,7 @@ class MealScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        children: [
+
                           Text(
                             argument.mealModel.name!.toUpperCase(),
                             style: const TextStyle(
@@ -67,9 +66,8 @@ class MealScreen extends StatelessWidget {
                             "${argument.mealModel.price!} LE",
                             style: const TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
+                          ),
+
                       SizedBox(
                         height: 30.h,
                       ),

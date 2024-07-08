@@ -45,7 +45,7 @@ static const String routeName = "home-screen";
               ],
             ),
             appBar: AppBar(
-                title:  Text("Ummey",style:  Theme.of(context).textTheme.titleMedium?.copyWith(
+                title:  Text("Yummy",style:  Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                     color: ColorHelper.mainColor,

@@ -1,5 +1,4 @@
 import 'package:cat/features/maker/view/pages/pizza_maker.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Maker extends StatelessWidget {

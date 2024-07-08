@@ -2,7 +2,6 @@ import 'package:cat/core/data_base/models/sale_model.dart';
 import 'package:cat/core/data_base/my_database.dart';
 import 'package:cat/core/general_components/build_show_toast.dart';
 import 'package:cat/features/home_screen/viewmodel/get_discounts/get_discounts_cubit.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

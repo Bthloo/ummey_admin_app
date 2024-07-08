@@ -21,7 +21,7 @@ class CategoriesScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.orange,
         centerTitle: true,
-        title: const Text("Ummey Admin App",style: TextStyle(
+        title: const Text("Yummy Admin App",style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
           fontSize: 25
